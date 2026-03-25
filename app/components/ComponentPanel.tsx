@@ -5,6 +5,9 @@ type Props = {
   addDropdown: () => void
   addDate: () => void
   addTime: () => void
+  addRating: () => void
+  addMatrix: () => void
+  addSection: () => void
 }
 
 export default function ComponentPanel({
@@ -13,12 +16,14 @@ export default function ComponentPanel({
   addCheckbox,
   addDropdown,
   addDate,
-  addTime
+  addTime,
+  addRating,
+  addMatrix,
+  addSection
 }: Props) {
   return (
     <div style={panelStyle}>
-      
-      <h2 style={{ ...titleStyle, textAlign: "center" }}>Components</h2>
+      <h2 style={titleStyle}>Components</h2>
 
       <button style={buttonStyle} onClick={addTextField}>
         Text Field
@@ -43,32 +48,45 @@ export default function ComponentPanel({
       <button style={buttonStyle} onClick={addTime}>
         Time
       </button>
+
+      <button style={buttonStyle} onClick={addRating}>
+        Rating
+      </button>
+
+      <button style={buttonStyle} onClick={addMatrix}>
+        Matrix
+      </button>
+
+      <button style={buttonStyle} onClick={addSection}>
+        + Add Section
+      </button>
     </div>
   )
 }
 
 const panelStyle = {
-  width: "300px",
+  width: "260px",
   height: "100vh",
   background: "#f5f5f5",
-  borderRight: "1px solid #ddd", 
-  padding: "40px 25px",
+  borderRight: "1px solid #ddd",
+  padding: "25px 18px",
   boxSizing: "border-box" as const
 }
 
 const titleStyle = {
-  marginBottom: "30px",
+  textAlign: "center" as const,
+  marginBottom: "18px",
   fontWeight: "600",
-  fontSize: "22px"
+  fontSize: "20px"
 }
 
 const buttonStyle = {
   width: "100%",
-  padding: "14px",
-  marginBottom: "18px",
-  borderRadius: "6px",
+  padding: "10px 12px",
+  marginBottom: "12px",
+  borderRadius: "4px",
   border: "1px solid #d0d0d0",
   background: "white",
   cursor: "pointer",
-  fontSize: "16px"
+  fontSize: "14px"
 }
